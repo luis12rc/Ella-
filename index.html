@@ -10,23 +10,12 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: linear-gradient(135deg, #ffc1cc, #ff9fc1);
+    background-color: #ffc1cc; /* fondo rosado sólido */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-}
-
-/* VIDEO DE FONDO */
-#video-fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
 }
 
 /* FOTOS EN ESQUINAS */
@@ -122,11 +111,6 @@ h1 {
 </head>
 <body>
 
-<!-- VIDEO DE FONDO -->
-<video id="video-fondo" autoplay muted loop playsinline preload="auto">
-    <source src="fondo.mp4" type="video/mp4">
-</video>
-
 <!-- FOTOS -->
 <img src="1.jpg" class="corner tl">
 <img src="2.jpg" class="corner tr">
@@ -207,13 +191,6 @@ function checkResources() {
     });
 }
 window.onload = () => { checkResources(); };
-
-// --- FORZAR REPRODUCCION VIDEO FONDO ---
-const videoFondo = document.getElementById('video-fondo');
-setInterval(() => {
-    if(videoFondo.paused) videoFondo.play().catch(()=>{});
-}, 1000);
 </script>
 </body>
 </html>
-    
